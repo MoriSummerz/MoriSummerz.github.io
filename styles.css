@@ -1,0 +1,259 @@
+:root {
+    /*
+        Color palette from Google Material UI
+        @see https://mui.com/material-ui/customization/dark-mode/
+    */
+    --text-primary: #fff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-disabled: rgba(255, 255, 255, 0.5);
+    --action-active: #fff;
+    --action-hover: rgba(255, 255, 255, 0.08);
+    --action-selected: rgba(255, 255, 255, 0.16);
+    --action-disabled: rgba(255, 255, 255, 0.3);
+    --action-disabled-background: rgba(255, 255, 255, 0.12);
+    --background-default: #121212;
+    --background-secondary: #535353;
+    --divider: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: #3c3c46;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    padding: 30px 70px;
+    text-align: center;
+    border-radius: 30px;
+    background: #3c3c46;
+    box-shadow: inset 40px 40px 80px #33333c,
+    inset -40px -40px 80px #454551;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-inner {
+    width: 100%;
+    height: fit-content;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+.name {
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.nickname {
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 10px;
+    color: var(--text-disabled);
+}
+
+.bio {
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+.job-history {
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 10px;
+    width: 52px;
+    height: 52px;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+}
+
+.social-icons a img {
+    width: 32px;
+    height: 32px;
+    filter: invert();
+}
+
+.social-icons a:hover {
+    background-color: var(--action-hover);
+}
+
+.st-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+}
+
+.st-steps li {
+    display: flex;
+    position: relative;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.st-steps li .step-icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background: gray;
+    color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+.st-steps li .step-icon.green {
+    background: #039100;
+}
+
+.st-steps li .step-icon.lightgray {
+    background: #a8a8a8;
+}
+
+.st-steps li .step-content {
+    /*padding: 5px 0 22px 10px;*/
+    color: var(--text-secondary);
+    font-weight: 100;
+    font-style: normal;
+}
+
+.st-steps li .step-content.current {
+    color: var(--text-primary);
+    font-weight: 300;
+    font-style: normal;
+}
+
+.st-steps li .step-content:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 1px solid lightgray;
+}
+
+.st-steps li:last-child :after {
+    display: none;
+}
+
+
+.st-steps.compact .step-icon {
+    color: white;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    top: 6px;
+    left: 6px;
+    position: relative;
+}
+
+.st-steps.compact .step-content {
+    padding: 5px 0 5px 15px;
+}
+
+.st-steps.compact .step-content:after {
+    top: 24px;
+    left: 14.5px;
+    height: calc(100% - 12px);
+}
+
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: var(--size);
+    width: var(--size);
+    margin: 10px;
+    background: var(--gray);
+    box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.dot {
+    animation-name: wave;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.dot {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
+}
+
+.dot:nth-of-type(2) {
+    z-index: 1;
+    animation-delay: .5s;
+}
+
+.dot:nth-of-type(3) {
+    z-index: 2;
+    animation-delay: 1s;
+}
+
+@keyframes wave {
+    0% {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale3d(4, 4, 1);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .card, .card-inner, body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .card-inner {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .card {
+        padding: 30px 20px;
+        border-radius: 0;
+    }
+}
