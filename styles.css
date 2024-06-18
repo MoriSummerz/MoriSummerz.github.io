@@ -208,3 +208,16 @@ body {
         border-radius: 0
     }
 }
+
+.button-main {
+    background: #33333c;
+    color: #fff;
+    border: 2px solid #212127;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+
+}
