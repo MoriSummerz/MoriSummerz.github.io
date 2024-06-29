@@ -4,7 +4,9 @@
   "description": "Repository for FWD course homeworks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,8 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
     "tslib": "^2.6.3"
+  },
+  "dependencies": {
+    "rollup-plugin-copy": "^3.5.0"
   }
 }
