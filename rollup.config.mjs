@@ -1,5 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
 import copy from 'rollup-plugin-copy';
+import terser from '@rollup/plugin-terser';
 
 export default {
     // ...
@@ -19,7 +20,8 @@ export default {
                 {src: 'src/*.html', dest: 'dist'},
                 {src: 'src/styles.css', dest: 'dist'}
             ]
-        })
+        }),
+        terser()
     ],
 
 };
