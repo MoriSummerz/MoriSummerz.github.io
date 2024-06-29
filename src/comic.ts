@@ -1,12 +1,27 @@
 const email = 'n.timofeev@innopolis.university';
 
+interface ComicResponse {
+    month: string;
+    num: number;
+    link: string;
+    year: string;
+    news: string;
+    safe_title: string;
+    transcript: string;
+    alt: string;
+    img: string;
+    title: string;
+    day: string;
+}
+
+
 const getComicId = async (email: string): Promise<string> => {
     const searchParams = new URLSearchParams({email});
     const response = await fetch(`https://fwd.innopolis.university/api/hw2?${searchParams}`);
     return response.text();
 };
 
-const getComicData = async (comicId: string): Promise<any> => {
+const getComicData = async (comicId: string): Promise<ComicResponse> => {
     const comicSearch = new URLSearchParams({id: comicId});
     const response = await fetch(`https://fwd.innopolis.university/api/comic?${comicSearch}`);
     return response.json();
@@ -14,8 +29,8 @@ const getComicData = async (comicId: string): Promise<any> => {
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-const displayComic = (comic: any) => {
-    const comicDate = new Date(comic.year, comic.month - 1, comic.day);
+const displayComic = (comic: ComicResponse) => {
+    const comicDate = new Date(Number(comic.year), Number(comic.month) - 1, Number(comic.day));
     const titleElement = document.querySelector('.comic-title');
     const dateElement = document.querySelector('.comic-date');
     const imgElement = document.querySelector('.comic-img') as HTMLImageElement;

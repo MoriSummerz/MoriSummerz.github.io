@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@rollup/plugin-terser": "^0.4.4",
+    "date-fns": "^3.6.0",
     "rollup-plugin-copy": "^3.5.0"
   }
 }
