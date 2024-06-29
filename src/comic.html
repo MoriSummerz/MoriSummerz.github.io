@@ -138,44 +138,6 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const email = 'n.timofeev@innopolis.university';
-        const searchParams = new URLSearchParams({email: email});
-        const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-        Promise.all([
-            fetch(`https://fwd.innopolis.university/api/hw2?${searchParams}`)
-                .then(response => response.text())
-                .then(data => {
-                    console.log(data);
-                    const comicSearch = new URLSearchParams({id: data});
-
-                    return fetch(`https://fwd.innopolis.university/api/comic?${comicSearch}`)
-                        .then(response => response.json());
-                }),
-            delay(1500)
-        ])
-            .then(([comic]) => {
-                const comicDate = new Date(comic.year, comic.month - 1, comic.day);
-                document.querySelector('.comic-title').innerText = comic.safe_title;
-                document.querySelector('.comic-date').innerText = comicDate.toLocaleDateString();
-                document.querySelector('.comic-img').src = comic.img;
-                document.querySelector('.comic-img').alt = comic.alt;
-
-                document.querySelector('.comic-title').classList.add('visible');
-                document.querySelector('.comic-date').classList.add('visible');
-                document.querySelector('.comic-img').classList.add('visible');
-                document.querySelector('.back-button').style.visibility = 'visible';
-
-                document.title = `Comic: ${comic.safe_title}`;
-            })
-            .catch(error => {
-                console.error('Error fetching the comic:', error);
-            })
-            .finally(() => {
-                document.querySelector('.loader').remove();
-            });
-    });
-</script>
+<script src="comic.js"></script>
 </body>
 </html>
