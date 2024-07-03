@@ -8,7 +8,7 @@
 <div class="card">
 	<div class="card-inner">
 		<h1 class="comic-title">{title}</h1>
-		<p class="comic-date">{date.toLocaleString()}</p>
+		<p class="comic-date">{date.toLocaleDateString()}</p>
 		<p class="comic-from-now">{formatDistanceToNow(date, { addSuffix: true })}</p>
 		<img src={img} alt={img_alt} class="comic-img" />
 		<button class="back-button" onclick={() => (window.location.href = '/')}> Back to main </button>
