@@ -21,9 +21,7 @@
 		</ul>
 		<SocialsIcons {...links} />
 		<div style="margin-top: 20px">
-			<a class="button-main" href="/comic"
-				>See a comic
-			</a>
+			<a class="button-main" href="/comic">See a comic </a>
 		</div>
 	</div>
 </div>
