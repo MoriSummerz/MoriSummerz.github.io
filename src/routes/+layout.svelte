@@ -1,13 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	export const ssr = false;
-
 	const links = [
 		{ name: 'Portfolio', href: '/' },
 		{ name: 'Comic', href: '/comic' }
 	];
-	console.log($page.url.pathname);
 </script>
 
 <header>
