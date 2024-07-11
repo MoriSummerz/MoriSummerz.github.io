@@ -21,9 +21,9 @@
 		</ul>
 		<SocialsIcons {...links} />
 		<div style="margin-top: 20px">
-			<button class="button-main" onclick={() => (window.location.href = '/comic')}
+			<a class="button-main" href="/comic"
 				>See a comic
-			</button>
+			</a>
 		</div>
 	</div>
 </div>
@@ -209,5 +209,6 @@
 			background 0.3s,
 			color 0.3s;
 		position: relative;
+		text-decoration: none;
 	}
 </style>

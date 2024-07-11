@@ -11,7 +11,7 @@
 		<p class="comic-date">{date.toLocaleDateString()}</p>
 		<p class="comic-from-now">{formatDistanceToNow(date, { addSuffix: true })}</p>
 		<img src={img} alt={img_alt} class="comic-img" />
-		<button class="back-button" onclick={() => (window.location.href = '/')}> Back to main </button>
+		<a class="back-button" href="/"> Back to main </a>
 	</div>
 </div>
 
@@ -27,7 +27,8 @@
 		transition:
 			background 0.3s,
 			color 0.3s;
-		margin-top: 30px;
+		margin-top: 50px;
+		text-decoration: none;
 	}
 
 	.comic-title,
@@ -45,6 +46,7 @@
 		height: auto;
 		margin-top: 20px;
 		border-radius: 10px;
+		margin-bottom: 50px;
 	}
 
 	.comic-title {

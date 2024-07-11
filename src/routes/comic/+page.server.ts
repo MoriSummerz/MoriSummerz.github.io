@@ -1,5 +1,7 @@
 import {getComicId, getComicData} from '$lib/api/comic';
 
+export const csr = false;
+
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
     const comicId = await getComicId('n.timofeev@innopolis.university');
