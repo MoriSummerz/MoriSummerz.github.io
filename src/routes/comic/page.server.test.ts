@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+import type { Mock } from 'vitest';
 import { load } from './+page.server';
 import { getComicId, getComicData } from '$lib/api/comic';
 
@@ -19,8 +20,8 @@ describe('load function', () => {
 			img: 'https://imgs.xkcd.com/comics/impostor.png'
 		};
 
-		(getComicId as vi.Mock).mockResolvedValue(mockComicId);
-		(getComicData as vi.Mock).mockResolvedValue(mockComicData);
+		(getComicId as Mock).mockResolvedValue(mockComicId);
+		(getComicData as Mock).mockResolvedValue(mockComicData);
 
 		const result = await load();
 
